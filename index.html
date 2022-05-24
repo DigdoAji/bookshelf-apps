@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
+  <body>
+    
+    <header class="head_bar">
+      <nav class="nav">
+        <ul class="nav-logo-pos">
+          <li>
+            <img
+              src="assets/bookheader.png"
+              alt="logo-bookshelf"
+              class="logo-img"
+            />
+          </li>
+          <li><h1 class="nav-logo">Bookshelf Apps</h1></li>
+        </ul>
+        <ul class="nav-bar">
+          <li class="nav-item">
+            <a href="#">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a href="#" class="active">Rak Buku</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <div class="menuHamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+      <div class="top-header">
+        <div class="top-header-text">
+          <h1>Bookshelf Apps</h1>
+          <p>An App That Can Mark The Books You Read</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="input_section">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <p for="inputBookTitle">Judul</p>
+            <input
+              id="inputBookTitle"
+              type="text"
+              name="Judul"
+              placeholder="Masukan Judul Buku"
+              required
+            />
+          </div>
+          <div class="input">
+            <p for="inputBookAuthor">Penulis</p>
+            <input
+              id="inputBookAuthor"
+              type="text"
+              name="Penulis"
+              placeholder="Masukan Penulis Buku"
+              required
+            />
+          </div>
+          <div class="input">
+            <p for="inputBookYear">Tahun Terbit</p>
+            <input
+              id="inputBookYear"
+              type="number"
+              name="Tahun"
+              maxlength="4"
+              placeholder="Masukan Tahun Terbit Buku"
+              required
+            />
+          </div>
+          <div class="input_inline">
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+            <input
+              id="inputBookIsComplete"
+              type="checkbox"
+              name="check-selesai"
+            />
+          </div>
+          <div class="btn-center">
+            <button id="bookSubmit" type="submit" name="Submit">
+              Masukkan Buku ke
+              <span id="spanCheck">Rak Belum Selesai Dibaca</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="search_section">
+        <h2>Pencarian Buku</h2>
+        <form id="searchBook">
+          <label for="searchBookTitle"></label>
+          <input
+            onkeyup="titleSearch()"
+            id="searchBookTitle"
+            type="text"
+            name="cari-buku"
+            placeholder="Masukan Judul Buku yang Anda Cari"
+          />
+          <button id="searchSubmit" type="submit" name="Submit">Cari</button>
+        </form>
+      </section>
+
+      <div class="flex-shelf">
+        <section class="book_shelf">
+          <h2>Rak Belum Selesai Dibaca</h2>
+
+          <div id="incompleteBookshelfList" class="book_list"></div>
+        </section>
+        <section class="book_shelf">
+          <h2>Rak Selesai Dibaca</h2>
+
+          <div id="completeBookshelfList" class="book_list"></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>Copyright &copy;2022 Bookshelf Apps</p>
+    </footer>
+
+    <div id="dialog-id" class="dialog">
+      <form class="dialog-content">
+        <div class="dialog-container">
+          <h2>WARNING</h2>
+          <h1>Hapus Buku</h1>
+          <p>Apakah anda yakin ingin menghapus buku ini?</p>
+
+          <div class="clear-dialog">
+            <button type="button" class="btnbox-delete">Hapus</button>
+            <button type="button" class="btnbox-cancel">Batal</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/mainScript.js"></script>
+    <script src="js/DOMScript.js"></script>
+    <script src="js/contentScript.js"></script>
+  </body>
+</html>
